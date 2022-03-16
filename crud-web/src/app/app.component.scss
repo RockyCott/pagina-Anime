@@ -1,0 +1,25 @@
+
+.sidenav-container {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+}
+
+.sidenav {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../assets/sidebar2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  
+}
+
+.nav-list-exp {
+  padding: 0 !important;
+}
+
+
+

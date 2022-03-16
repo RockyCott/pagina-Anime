@@ -1,0 +1,47 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-body">
+      <span class="h3">Listado de Personajes</span>
+      <button
+        class="btn btn-dark btn-lg"
+        style="float: right"
+        (click)="openAgregar()"
+      >
+        Añadir
+      </button>
+      <h5 *ngIf="personajes.length == 0" style="margin-top: 30px">
+        No hay datos para mostrar
+      </h5>
+      <table class="table table-striped mt-5" *ngIf="personajes.length > 0">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Anime</th>
+            <th>Documento</th>
+            <th>Salario</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let personaje of personajes">
+            <td>{{ personaje.nombre }}</td>
+            <td>{{ personaje.anime }}</td>
+            <td>{{ personaje.documento }}</td>
+            <td>{{ personaje.salario | currency }}</td>
+            <td>
+              <i
+                class="fas fa-edit fa-lg text-success"
+                style="margin-right: 10px"
+                (click)="editarPersonaje(personaje)"
+              ></i>
+              <i
+                class="fas fa-trash-alt fa-lg text-danger"
+                (click)="eliminarPersonaje(personaje)"
+              ></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

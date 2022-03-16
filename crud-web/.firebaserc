@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "anime-6409d": {
+      "hosting": {
+        "crud-web": [
+          "anime-6409d"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "anime-6409d"
+  }
+}

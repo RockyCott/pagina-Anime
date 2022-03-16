@@ -1,0 +1,97 @@
+<header class="header">
+  <nav
+    class="navbar navbar-dark bg-dark navbar-expand-sm main-nav mat-elevation-z4"
+  >
+    <div class="container-fluid">
+      <a routerLink="/" class="navbar-brand">
+        <img
+          src="../../../assets/icono.png"
+          alt=""
+          width="60"
+          height="48"
+          class="d-inline-block align-text-top"
+          routerLink="/"
+        />
+        <span
+          class="navbar-brand d-inline-block align-text-top mb-0 h1"
+          style="margin-top: 10px; margin-left: 5px"
+          >AnimeCharacter</span
+        ></a
+      >
+      <button
+        #input
+        class="navbar-toggler"
+        type="button"
+        style="color: green; border-color: green"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarScroll"
+        aria-controls="navbarScroll"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown mr-2">
+            <a class="nav-link" aria-current="page" routerLink="/inicio"
+              >Inicio</a
+            >
+          </li>
+          <li class="nav-item dropdown mr-2" *ngIf="isLoggedIn">
+            <a routerLink="/list-personajes" class="nav-link"> Personajes </a>
+          </li>
+          <li class="nav-item dropdown mr-2" *ngIf="isLoggedIn">
+            <a routerLink="/configuracionUsuario" class="nav-link">{{
+              loggedInUser
+            }}</a>
+          </li>
+          <li class="nav-item dropdown mr-2" *ngIf="!isLoggedIn">
+            <a
+              routerLink="/login"
+              class="nav-link"
+              routerLinkActive="router-link-active"
+            >
+            <i class="fa-solid fa-user"></i> Login
+            </a>
+          </li>
+          <li
+            class="nav-item dropdown mr-2"
+            *ngIf="!isLoggedIn && permitirRegistro"
+          >
+            <a
+              routerLink="/registrarse"
+              class="nav-link"
+              routerLinkActive="router-link-active"
+            >
+              <i class="fa-solid fa-user-plus"></i> Sign Up
+            </a>
+          </li>
+          <li class="nav-item dropdown mr-2" *ngIf="isLoggedIn">
+            <a style="cursor: pointer" (click)="logOut()" class="nav-link">
+              <i
+                class="fa-solid fa-right-from-bracket"
+                style="color: lightcoral"
+              ></i>
+              Salir
+            </a>
+          </li>
+          <li
+            class="btn btn-outline-success icon-padding d-none d-sm-block mr-2"
+            routerLink="/configuracion"
+            *ngIf="isLoggedIn"
+          >
+            <i class="fa-solid fa-gear"></i>
+          </li>
+        </ul>
+      </div>
+      <button
+        class="btn btn-outline-success icon-padding d-none d-sm-block"
+        type="button"
+        (click)="sideEvent.emit(true)"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+</header>

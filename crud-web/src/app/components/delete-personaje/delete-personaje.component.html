@@ -1,0 +1,25 @@
+<h1><p style="text-align: center;">Eliminar Personaje</p></h1>
+<div mat-dialog-content>
+  ¿Está seguro que desea eliminar el siguiente personaje?
+  <ul>
+    <li>{{ data.personaje.nombre }}</li>
+    <li>Anime: {{ data.personaje.anime }}</li>
+  </ul>
+  <div *ngIf="loading">
+    <mat-progress-bar mode="indeterminate" color="warn"></mat-progress-bar>
+    <br />
+  </div>
+  <div class="col-12 d-flex justify-content-center">
+    <button
+      class="btn btn-secondary"
+      style="margin-right: 10px"
+      mat-button
+      mat-dialog-close
+    >
+      Cancelar
+    </button>
+    <button type="submit" class="btn btn-dark" (click)="eliminarPersonaje()">
+      Eliminar
+    </button>
+  </div>
+</div>
